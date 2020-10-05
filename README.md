@@ -6,7 +6,8 @@ Tweeter BOT- Interactive webpage created using React framework, backend code wri
 
 Important Links:
 1) https://python-twitter.readthedocs.io/en/latest/rate_limits.html
-
+2) https://stackoverflow.com/questions/48916147/tweepy-how-to-notify-when-a-tweet-is-deleted
+3) https://www.angelaambroz.com/blog/posts/2018/Jan/02/making_a_twitter_bot/
 
 For unit testing:
 https://github.com/agoragames/chai
