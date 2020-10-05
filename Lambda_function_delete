@@ -1,8 +1,6 @@
 import json
 import tweepy
 
-
-
 ACCESS_TOKEN = 'xxx'
 ACCESS_SECRET = 'xxx'
 CONSUMER_KEY = 'xxx'
