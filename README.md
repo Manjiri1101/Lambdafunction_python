@@ -6,3 +6,7 @@ Tweeter BOT- Interactive webpage created using React framework, backend code wri
 
 Important Links:
 1) https://python-twitter.readthedocs.io/en/latest/rate_limits.html
+
+
+For unit testing:
+https://github.com/agoragames/chai
