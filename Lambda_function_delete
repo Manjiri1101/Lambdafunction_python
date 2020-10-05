@@ -1,0 +1,41 @@
+import json
+import tweepy
+
+
+
+ACCESS_TOKEN = 'xxx'
+ACCESS_SECRET = 'xxx'
+CONSUMER_KEY = 'xxx'
+CONSUMER_SECRET = 'xxx'
+
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
+
+'''
+api = tweepy.API(auth, wait_on_rate_limit=True)
+api.update_status("I miss baloo")
+'''
+
+api = tweepy.API(auth)
+# auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+# auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
+
+
+def lambda_handler(event, context):
+    # TODO implement
+    tweets_to_delete = event
+    timeline = tweepy.Cursor(api.user_timeline).items()
+    
+    for tweet in timeline:
+        if tweet.id == tweets_to_delete:
+            print("Deleting %d: [%s] %s" % (tweet.id, tweet.created_at, tweet.text))
+            api.destroy_status(tweet.id)
+            print('deleted')
+            break
+    
+    return {
+        'statusCode': 200,
+        'body': json.dumps('deleted tweet id: {}'.format(event.items()))
+    }
+
+
