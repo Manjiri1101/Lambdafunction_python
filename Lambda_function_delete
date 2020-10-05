@@ -12,13 +12,14 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
 
 '''
+#To update the status
 api = tweepy.API(auth, wait_on_rate_limit=True)
 api.update_status("I miss baloo")
 '''
 
+
 api = tweepy.API(auth)
-# auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-# auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
+
 
 
 def lambda_handler(event, context):
